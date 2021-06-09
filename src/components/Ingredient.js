@@ -39,10 +39,6 @@ function Ingredient(props) {
         }
     }, [items])
 
-    useEffect(() => {
-        props.data(total)
-    }, [total])
-
     const addRecord = () => {  
         if (document.getElementById('foodid').value === "") {
             return console.log("add something")
@@ -57,6 +53,8 @@ function Ingredient(props) {
         return <div>Loading...</div>;
     } else {
         return (
+            props.data(total)
+  
             <div>
                 <input id="foodid" className="form-control" type="text" placeholder="e.g. 8 oz beef and 1 cup rice" style={{marginBottom: 10}} />
 
